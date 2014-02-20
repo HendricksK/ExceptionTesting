@@ -16,5 +16,8 @@ import cputgroup3a.exceptiontesting.service.ExceptionTestingService;
 import cputgroup3a.exceptiontesting.service.Impl.ExceptionTestingServiceImpl;
 
 public class AppConfig {
-    
+    @Bean(name="ET")
+    public ExceptionTestingService getService(){
+        return new ExceptionTestingServiceImpl();
+    }
 }
