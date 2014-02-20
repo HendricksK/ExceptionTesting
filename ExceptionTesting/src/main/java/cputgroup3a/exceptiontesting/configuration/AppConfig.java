@@ -10,6 +10,11 @@ package cputgroup3a.exceptiontesting.configuration;
  *
  * @author kurvin
  */
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import cputgroup3a.exceptiontesting.service.ExceptionTestingService;
+import cputgroup3a.exceptiontesting.service.Impl.ExceptionTestingServiceImpl;
+
 public class AppConfig {
     
 }
