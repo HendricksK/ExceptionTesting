@@ -21,11 +21,10 @@ import org.testng.annotations.BeforeMethod;
 import cputgroup3a.exceptiontesting.service.ExceptionTestingService;
 import cputgroup3a.exceptiontesting.service.Impl.ExceptionTestingServiceImpl;
 import cputgroup3a.exceptiontesting.configuration.AppConfig;
-import java.util.ArrayList;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.testng.annotations.Test;
-import junit.framework.JUnit4TestAdapter;
+
 
 
 public class ExceptionTestingTest {
@@ -41,15 +40,11 @@ public class ExceptionTestingTest {
     
     public static ExceptionTestingService ts;
     
-    @Test
+    @Test(expected=ArrayIndexOutOfBoundsException.class)
     public void empty() throws Exception{
-        try{
             int []array = new int[1];
             array[0] = ts.calculate(123);
             array[1] = ts.calculate(800);
-        }catch(IndexOutOfBoundsException eb){
-            
-        }
     }
         
     @BeforeClass
