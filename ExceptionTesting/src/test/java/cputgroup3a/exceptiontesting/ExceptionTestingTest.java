@@ -21,9 +21,9 @@ import org.testng.annotations.BeforeMethod;
 import cputgroup3a.exceptiontesting.service.ExceptionTestingService;
 import cputgroup3a.exceptiontesting.service.Impl.ExceptionTestingServiceImpl;
 import cputgroup3a.exceptiontesting.configuration.AppConfig;
-import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.testng.annotations.Test;
 
 
 
@@ -39,10 +39,13 @@ public class ExceptionTestingTest {
     // public void hello() {}
     
     public static ExceptionTestingService ts;
-    
-    @Test(expected=ArrayIndexOutOfBoundsException.class)
+    int []array = new int[1];
+    /**
+     *
+     * @throws Exception
+     */
+    @Test(expectedExceptions=ArrayIndexOutOfBoundsException.class)
     public void empty() throws Exception{
-            int []array = new int[1];
             array[0] = ts.calculate(123);
             array[1] = ts.calculate(800);
     }
